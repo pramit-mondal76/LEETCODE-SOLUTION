@@ -1,0 +1,27 @@
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        ListNode* curr=head;
+        ListNode* temp=head;
+        stack<int> st;
+        while(curr != NULL)
+        {
+            st.push(curr->val);
+            curr=curr->next;
+        }
+        while(temp!=NULL)
+        {
+            int x= st.top();
+            st.pop();
+            if(x!= temp-> val)
+            {
+                return false;
+            }else
+            {
+                temp=temp->next;
+            }
+            
+        }
+        return true;
+    }
+};
