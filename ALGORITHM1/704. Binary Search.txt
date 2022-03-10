@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int binarysearch(vector<int>& nums, int terget,int l,int r) {
+       if(l<=r)
+       {
+           int mid=(l+r)/2;
+           if(nums[mid]==terget) return mid;
+           else if (nums[mid]>terget) return binarysearch(nums,terget,l,mid-1);
+           else return binarysearch(nums,terget,mid+1,r);
+       }
+        return -1;
+    }
+    int search(vector<int >& nums,int t)
+    {
+       int l=0;
+       int r=nums.size()-1; 
+       int s=binarysearch(nums,t,l,r);
+       return s;
+    }
+};
