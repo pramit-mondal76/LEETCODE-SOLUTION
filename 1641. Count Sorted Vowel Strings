@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int countVowelStrings(int n) {
+         return counter(n,0);
+    }
+    int counter(int n,int start)
+    {
+        if(n==0)return 1;
+        int count=0;
+        for(int i=0;i<5;i++)
+        {
+          count+=counter(n-1,i);
+        }
+        return count;
+    }
+};
