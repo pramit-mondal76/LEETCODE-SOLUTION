@@ -1,0 +1,9 @@
+class Solution {
+public:
+    int subsetXORSum(const vector<int>& nums, int pre = 0, int i = -1) {
+        int s = pre; 
+        for (int j = i + 1; j < nums.size(); j++)
+            s += subsetXORSum(nums, pre ^ nums[j], j);
+        return s;
+    }
+};
